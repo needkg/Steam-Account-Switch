@@ -33,7 +33,6 @@
             botaoFechar = new Button();
             botaoMinimizar = new Button();
             iconeSteam = new PictureBox();
-            labelVersao = new Label();
             nomeDoPrograma = new Label();
             bordaSuperior = new Panel();
             listaDeContas = new ListBox();
@@ -44,6 +43,8 @@
             bordaEsquerda = new Panel();
             botaoAtualizarLista = new Button();
             botaoAbrirArquivo = new Button();
+            botaoComoUsar = new LinkLabel();
+            botaoVersao = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)iconeSteam).BeginInit();
             bordaSuperior.SuspendLayout();
             SuspendLayout();
@@ -101,17 +102,6 @@
             iconeSteam.Size = new Size(67, 65);
             iconeSteam.TabIndex = 7;
             iconeSteam.TabStop = false;
-            // 
-            // labelVersao
-            // 
-            labelVersao.AutoSize = true;
-            labelVersao.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point);
-            labelVersao.ForeColor = Color.FromArgb(158, 161, 178);
-            labelVersao.Location = new Point(196, 178);
-            labelVersao.Name = "labelVersao";
-            labelVersao.Size = new Size(72, 15);
-            labelVersao.TabIndex = 12;
-            labelVersao.Text = "Version: 1.3";
             // 
             // nomeDoPrograma
             // 
@@ -232,6 +222,32 @@
             botaoAbrirArquivo.UseVisualStyleBackColor = true;
             botaoAbrirArquivo.Click += botaoAbrirArquivo_Click;
             // 
+            // botaoComoUsar
+            // 
+            botaoComoUsar.AutoSize = true;
+            botaoComoUsar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            botaoComoUsar.LinkColor = Color.FromArgb(158, 161, 178);
+            botaoComoUsar.Location = new Point(196, 32);
+            botaoComoUsar.Name = "botaoComoUsar";
+            botaoComoUsar.Size = new Size(70, 15);
+            botaoComoUsar.TabIndex = 21;
+            botaoComoUsar.TabStop = true;
+            botaoComoUsar.Text = "How to use";
+            botaoComoUsar.LinkClicked += botaoComoUsar_LinkClicked;
+            // 
+            // botaoVersao
+            // 
+            botaoVersao.AutoSize = true;
+            botaoVersao.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            botaoVersao.LinkColor = Color.FromArgb(158, 161, 178);
+            botaoVersao.Location = new Point(197, 178);
+            botaoVersao.Name = "botaoVersao";
+            botaoVersao.Size = new Size(71, 15);
+            botaoVersao.TabIndex = 22;
+            botaoVersao.TabStop = true;
+            botaoVersao.Text = "Version: 1.4";
+            botaoVersao.LinkClicked += botaoVersao_LinkClicked;
+            // 
             // JanelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -240,6 +256,8 @@
             BackColor = Color.FromArgb(46, 51, 73);
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(272, 199);
+            Controls.Add(botaoVersao);
+            Controls.Add(botaoComoUsar);
             Controls.Add(botaoAbrirArquivo);
             Controls.Add(botaoAtualizarLista);
             Controls.Add(bordaEsquerda);
@@ -249,7 +267,6 @@
             Controls.Add(botaoRemoverConta);
             Controls.Add(listaDeContas);
             Controls.Add(bordaSuperior);
-            Controls.Add(labelVersao);
             Controls.Add(iconeSteam);
             Controls.Add(botaoLogar);
             FormBorderStyle = FormBorderStyle.None;
@@ -272,7 +289,6 @@
         private Button botaoFechar;
         private Button botaoMinimizar;
         private PictureBox iconeSteam;
-        private Label labelVersao;
         private Label nomeDoPrograma;
         private Panel bordaSuperior;
         private ListBox listaDeContas;
@@ -283,5 +299,7 @@
         private Panel bordaEsquerda;
         private Button botaoAtualizarLista;
         private Button botaoAbrirArquivo;
+        private LinkLabel botaoComoUsar;
+        private LinkLabel botaoVersao;
     }
 }

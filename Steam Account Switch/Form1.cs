@@ -5,9 +5,11 @@ using System.Drawing;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Security.Policy;
+using System.Security.Principal;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace Steam_Account_Switch
 {
@@ -80,6 +82,30 @@ namespace Steam_Account_Switch
         private void botaoAbrirArquivo_Click(object sender, EventArgs e)
         {
             Process.Start("notepad.exe", accountsFile);
+        }
+
+        // Executa a função do botão Como usar
+        private void botaoComoUsar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            String linha1 = "1. Click on the \"+\" button to add a new account.";
+            String linha2 = "2. Enter your username and click on the \"Add\" button.";
+            String linha3 = "3. Now select your account and click on the \"Connect\" button.";
+            String linha4 = "";
+            String linha5 = "Note: If this is the first time you're connecting this account, you will be prompted for the Steam Guard code for authentication. You will not need to provide the Steam Guard code in future logins with this account.";
+
+
+            string mensagem = linha1 + "\n" + linha2 + "\n" + linha3 + "\n" + linha4 + "\n" + linha5;
+            MessageBox.Show(mensagem, "How to use",
+                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // Executa a função do botão Versão
+        private void botaoVersao_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process myProcess = new Process();
+            myProcess.StartInfo.UseShellExecute = true;
+            myProcess.StartInfo.FileName = "https://github.com/nk260203/Steam-Account-Switch";
+            myProcess.Start();
         }
 
         // Método que remove a conta da lista
