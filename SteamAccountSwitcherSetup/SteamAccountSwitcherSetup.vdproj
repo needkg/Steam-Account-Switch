@@ -50,6 +50,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -74,6 +82,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -182,15 +198,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Steam Account Switcher"
-        "ProductCode" = "8:{532457D3-24C7-4AB5-98B4-3B5E1CC0D32F}"
-        "PackageCode" = "8:{8355C703-60FC-4AC8-AC94-E5298BAC3611}"
+        "ProductCode" = "8:{50C5CEDA-B6DE-411C-9DF8-2BF2B94C6A2B}"
+        "PackageCode" = "8:{1794379F-700C-4CDE-B152-3B17A7DE7C97}"
         "UpgradeCode" = "8:{8F38D2D0-83B1-4829-B46A-F34E0E05D9D2}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.1"
+        "ProductVersion" = "8:1.3"
         "Manufacturer" = "8:needkg"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
