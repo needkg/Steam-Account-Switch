@@ -1,6 +1,6 @@
 ﻿namespace Steam_Account_Switch
 {
-    partial class Form1
+    partial class JanelaPrincipal
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,146 +28,209 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            checkBox1 = new CheckBox();
-            checkBox2 = new CheckBox();
-            checkBox3 = new CheckBox();
-            botao = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            pictureBox1 = new PictureBox();
-            label2 = new Label();
-            label1 = new Label();
-            panel1 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JanelaPrincipal));
+            botaoLogar = new Button();
+            botaoFechar = new Button();
+            botaoMinimizar = new Button();
+            iconeSteam = new PictureBox();
+            labelVersao = new Label();
+            nomeDoPrograma = new Label();
+            bordaSuperior = new Panel();
+            listaDeContas = new ListBox();
+            botaoRemoverConta = new Button();
+            botaoAdicionarConta = new Button();
+            bordaDireita = new Panel();
+            bordaInferior = new Panel();
+            bordaEsquerda = new Panel();
+            botaoAtualizarLista = new Button();
+            botaoAbrirArquivo = new Button();
+            ((System.ComponentModel.ISupportInitialize)iconeSteam).BeginInit();
+            bordaSuperior.SuspendLayout();
             SuspendLayout();
             // 
-            // checkBox1
+            // botaoLogar
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Checked = true;
-            checkBox1.CheckState = CheckState.Checked;
-            checkBox1.ForeColor = Color.FromArgb(158, 161, 178);
-            checkBox1.Location = new Point(12, 31);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(75, 19);
-            checkBox1.TabIndex = 0;
-            checkBox1.Text = "nk260203";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            botaoLogar.FlatAppearance.BorderSize = 0;
+            botaoLogar.FlatStyle = FlatStyle.Flat;
+            botaoLogar.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            botaoLogar.ForeColor = Color.FromArgb(0, 126, 249);
+            botaoLogar.ImageAlign = ContentAlignment.MiddleLeft;
+            botaoLogar.Location = new Point(19, 159);
+            botaoLogar.Margin = new Padding(10);
+            botaoLogar.Name = "botaoLogar";
+            botaoLogar.Size = new Size(127, 31);
+            botaoLogar.TabIndex = 3;
+            botaoLogar.Text = "Connect";
+            botaoLogar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            botaoLogar.UseVisualStyleBackColor = true;
+            botaoLogar.Click += botao_Click;
             // 
-            // checkBox2
+            // botaoFechar
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.ForeColor = Color.FromArgb(158, 161, 178);
-            checkBox2.Location = new Point(12, 56);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(82, 19);
-            checkBox2.TabIndex = 1;
-            checkBox2.Text = "lorddark90";
-            checkBox2.UseVisualStyleBackColor = true;
-            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
+            botaoFechar.FlatAppearance.BorderSize = 0;
+            botaoFechar.FlatStyle = FlatStyle.Flat;
+            botaoFechar.ForeColor = Color.White;
+            botaoFechar.Location = new Point(252, 11);
+            botaoFechar.Margin = new Padding(1);
+            botaoFechar.Name = "botaoFechar";
+            botaoFechar.Size = new Size(25, 25);
+            botaoFechar.TabIndex = 5;
+            botaoFechar.Text = "X";
+            botaoFechar.UseVisualStyleBackColor = true;
+            botaoFechar.Click += button2_Click;
             // 
-            // checkBox3
+            // botaoMinimizar
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.ForeColor = Color.FromArgb(158, 161, 178);
-            checkBox3.Location = new Point(12, 81);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(101, 19);
-            checkBox3.TabIndex = 2;
-            checkBox3.Text = "needkg260203";
-            checkBox3.UseVisualStyleBackColor = true;
-            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
+            botaoMinimizar.FlatAppearance.BorderSize = 0;
+            botaoMinimizar.FlatStyle = FlatStyle.Flat;
+            botaoMinimizar.ForeColor = Color.White;
+            botaoMinimizar.Location = new Point(227, 11);
+            botaoMinimizar.Margin = new Padding(1);
+            botaoMinimizar.Name = "botaoMinimizar";
+            botaoMinimizar.Size = new Size(25, 25);
+            botaoMinimizar.TabIndex = 6;
+            botaoMinimizar.Text = "-";
+            botaoMinimizar.UseVisualStyleBackColor = true;
+            botaoMinimizar.Click += button3_Click;
             // 
-            // botao
+            // iconeSteam
             // 
-            botao.FlatAppearance.BorderSize = 0;
-            botao.FlatStyle = FlatStyle.Flat;
-            botao.Font = new Font("Nirmala UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            botao.ForeColor = Color.FromArgb(0, 126, 249);
-            botao.ImageAlign = ContentAlignment.MiddleLeft;
-            botao.Location = new Point(12, 102);
-            botao.Margin = new Padding(70, 3, 3, 3);
-            botao.Name = "botao";
-            botao.Size = new Size(101, 31);
-            botao.TabIndex = 3;
-            botao.Text = "Logar";
-            botao.TextImageRelation = TextImageRelation.ImageBeforeText;
-            botao.UseVisualStyleBackColor = true;
-            botao.Click += botao_Click;
+            iconeSteam.Image = Properties.Resources.Steam_Switch_Account_Icon;
+            iconeSteam.Location = new Point(190, 70);
+            iconeSteam.Name = "iconeSteam";
+            iconeSteam.Size = new Size(67, 65);
+            iconeSteam.TabIndex = 7;
+            iconeSteam.TabStop = false;
             // 
-            // button2
+            // labelVersao
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(215, 6);
-            button2.Margin = new Padding(1);
-            button2.Name = "button2";
-            button2.Size = new Size(25, 25);
-            button2.TabIndex = 5;
-            button2.Text = "X";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            labelVersao.AutoSize = true;
+            labelVersao.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point);
+            labelVersao.ForeColor = Color.FromArgb(158, 161, 178);
+            labelVersao.Location = new Point(196, 178);
+            labelVersao.Name = "labelVersao";
+            labelVersao.Size = new Size(72, 15);
+            labelVersao.TabIndex = 12;
+            labelVersao.Text = "Version: 1.2";
             // 
-            // button3
+            // nomeDoPrograma
             // 
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(190, 7);
-            button3.Margin = new Padding(1);
-            button3.Name = "button3";
-            button3.Size = new Size(25, 25);
-            button3.TabIndex = 6;
-            button3.Text = "-";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            nomeDoPrograma.AutoSize = true;
+            nomeDoPrograma.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            nomeDoPrograma.ForeColor = Color.FromArgb(158, 161, 178);
+            nomeDoPrograma.Location = new Point(13, 16);
+            nomeDoPrograma.Name = "nomeDoPrograma";
+            nomeDoPrograma.Size = new Size(145, 15);
+            nomeDoPrograma.TabIndex = 13;
+            nomeDoPrograma.Text = "Steam Account Switcher";
             // 
-            // pictureBox1
+            // bordaSuperior
             // 
-            pictureBox1.Image = Properties.Resources.Steam_Switch_Account_Icon;
-            pictureBox1.Location = new Point(143, 43);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(67, 65);
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
+            bordaSuperior.BackColor = Color.FromArgb(24, 30, 54);
+            bordaSuperior.BackgroundImageLayout = ImageLayout.None;
+            bordaSuperior.Controls.Add(nomeDoPrograma);
+            bordaSuperior.Controls.Add(botaoMinimizar);
+            bordaSuperior.Controls.Add(botaoFechar);
+            bordaSuperior.Location = new Point(-6, -9);
+            bordaSuperior.Name = "bordaSuperior";
+            bordaSuperior.Size = new Size(292, 38);
+            bordaSuperior.TabIndex = 14;
             // 
-            // label2
+            // listaDeContas
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(158, 161, 178);
-            label2.Location = new Point(160, 123);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 15);
-            label2.TabIndex = 12;
-            label2.Text = "Version: 1.1";
+            listaDeContas.BackColor = Color.FromArgb(46, 51, 73);
+            listaDeContas.BorderStyle = BorderStyle.FixedSingle;
+            listaDeContas.ForeColor = Color.FromArgb(158, 161, 178);
+            listaDeContas.FormattingEnabled = true;
+            listaDeContas.ItemHeight = 15;
+            listaDeContas.Location = new Point(18, 44);
+            listaDeContas.Margin = new Padding(10);
+            listaDeContas.Name = "listaDeContas";
+            listaDeContas.Size = new Size(128, 107);
+            listaDeContas.TabIndex = 16;
             // 
-            // label1
+            // botaoRemoverConta
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(158, 161, 178);
-            label1.Location = new Point(10, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(145, 15);
-            label1.TabIndex = 13;
-            label1.Text = "Steam Account Switcher";
+            botaoRemoverConta.FlatAppearance.BorderSize = 0;
+            botaoRemoverConta.FlatStyle = FlatStyle.Flat;
+            botaoRemoverConta.ForeColor = Color.White;
+            botaoRemoverConta.Location = new Point(150, 71);
+            botaoRemoverConta.Margin = new Padding(1);
+            botaoRemoverConta.Name = "botaoRemoverConta";
+            botaoRemoverConta.Size = new Size(25, 25);
+            botaoRemoverConta.TabIndex = 17;
+            botaoRemoverConta.Text = "-";
+            botaoRemoverConta.UseVisualStyleBackColor = true;
+            botaoRemoverConta.Click += button1_Click;
             // 
-            // panel1
+            // botaoAdicionarConta
             // 
-            panel1.BackColor = Color.FromArgb(24, 30, 54);
-            panel1.BackgroundImageLayout = ImageLayout.None;
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Location = new Point(-6, -7);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(262, 32);
-            panel1.TabIndex = 14;
+            botaoAdicionarConta.FlatAppearance.BorderSize = 0;
+            botaoAdicionarConta.FlatStyle = FlatStyle.Flat;
+            botaoAdicionarConta.ForeColor = Color.White;
+            botaoAdicionarConta.Location = new Point(150, 45);
+            botaoAdicionarConta.Margin = new Padding(1);
+            botaoAdicionarConta.Name = "botaoAdicionarConta";
+            botaoAdicionarConta.Size = new Size(25, 25);
+            botaoAdicionarConta.TabIndex = 18;
+            botaoAdicionarConta.Text = "+";
+            botaoAdicionarConta.UseVisualStyleBackColor = true;
+            botaoAdicionarConta.Click += button4_Click;
+            // 
+            // bordaDireita
+            // 
+            bordaDireita.BackColor = Color.FromArgb(24, 30, 54);
+            bordaDireita.BackgroundImageLayout = ImageLayout.None;
+            bordaDireita.Location = new Point(269, 29);
+            bordaDireita.Name = "bordaDireita";
+            bordaDireita.Size = new Size(17, 182);
+            bordaDireita.TabIndex = 15;
+            // 
+            // bordaInferior
+            // 
+            bordaInferior.BackColor = Color.FromArgb(24, 30, 54);
+            bordaInferior.BackgroundImageLayout = ImageLayout.None;
+            bordaInferior.Location = new Point(-7, 196);
+            bordaInferior.Name = "bordaInferior";
+            bordaInferior.Size = new Size(290, 15);
+            bordaInferior.TabIndex = 16;
+            // 
+            // bordaEsquerda
+            // 
+            bordaEsquerda.BackColor = Color.FromArgb(24, 30, 54);
+            bordaEsquerda.BackgroundImageLayout = ImageLayout.None;
+            bordaEsquerda.Location = new Point(-7, 23);
+            bordaEsquerda.Name = "bordaEsquerda";
+            bordaEsquerda.Size = new Size(10, 188);
+            bordaEsquerda.TabIndex = 17;
+            // 
+            // botaoAtualizarLista
+            // 
+            botaoAtualizarLista.FlatAppearance.BorderSize = 0;
+            botaoAtualizarLista.FlatStyle = FlatStyle.Flat;
+            botaoAtualizarLista.ForeColor = Color.White;
+            botaoAtualizarLista.Location = new Point(150, 125);
+            botaoAtualizarLista.Margin = new Padding(1);
+            botaoAtualizarLista.Name = "botaoAtualizarLista";
+            botaoAtualizarLista.Size = new Size(25, 25);
+            botaoAtualizarLista.TabIndex = 19;
+            botaoAtualizarLista.Text = "⟳";
+            botaoAtualizarLista.UseVisualStyleBackColor = true;
+            botaoAtualizarLista.Click += button5_Click;
+            // 
+            // botaoAbrirArquivo
+            // 
+            botaoAbrirArquivo.FlatAppearance.BorderSize = 0;
+            botaoAbrirArquivo.FlatStyle = FlatStyle.Flat;
+            botaoAbrirArquivo.ForeColor = Color.White;
+            botaoAbrirArquivo.Location = new Point(150, 98);
+            botaoAbrirArquivo.Margin = new Padding(1);
+            botaoAbrirArquivo.Name = "botaoAbrirArquivo";
+            botaoAbrirArquivo.Size = new Size(25, 25);
+            botaoAbrirArquivo.TabIndex = 20;
+            botaoAbrirArquivo.Text = "📂";
+            botaoAbrirArquivo.UseVisualStyleBackColor = true;
+            botaoAbrirArquivo.Click += button6_Click;
             // 
             // Form1
             // 
@@ -176,14 +239,19 @@
             AutoValidate = AutoValidate.EnablePreventFocusChange;
             BackColor = Color.FromArgb(46, 51, 73);
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(234, 141);
-            Controls.Add(panel1);
-            Controls.Add(label2);
-            Controls.Add(pictureBox1);
-            Controls.Add(botao);
-            Controls.Add(checkBox3);
-            Controls.Add(checkBox2);
-            Controls.Add(checkBox1);
+            ClientSize = new Size(272, 199);
+            Controls.Add(botaoAbrirArquivo);
+            Controls.Add(botaoAtualizarLista);
+            Controls.Add(bordaEsquerda);
+            Controls.Add(bordaInferior);
+            Controls.Add(bordaDireita);
+            Controls.Add(botaoAdicionarConta);
+            Controls.Add(botaoRemoverConta);
+            Controls.Add(listaDeContas);
+            Controls.Add(bordaSuperior);
+            Controls.Add(labelVersao);
+            Controls.Add(iconeSteam);
+            Controls.Add(botaoLogar);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -191,24 +259,29 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Steam Account Switcher";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)iconeSteam).EndInit();
+            bordaSuperior.ResumeLayout(false);
+            bordaSuperior.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
-        private Button botao;
-        private Button button2;
-        private Button button3;
-        private PictureBox pictureBox1;
-        private Label label2;
-        private Label label1;
-        private Panel panel1;
+        private Button botaoLogar;
+        private Button botaoFechar;
+        private Button botaoMinimizar;
+        private PictureBox iconeSteam;
+        private Label labelVersao;
+        private Label nomeDoPrograma;
+        private Panel bordaSuperior;
+        private ListBox listaDeContas;
+        private Button botaoRemoverConta;
+        private Button botaoAdicionarConta;
+        private Panel bordaDireita;
+        private Panel bordaInferior;
+        private Panel bordaEsquerda;
+        private Button botaoAtualizarLista;
+        private Button botaoAbrirArquivo;
     }
 }
