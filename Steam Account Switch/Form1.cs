@@ -152,7 +152,7 @@ namespace Steam_Account_Switch
         // Método que adiciona uma conta na lista de conta
         public void adicionarConta()
         {
-            if (Regex.IsMatch(username, "^[a-zA-Z0-9_]*$"))
+            if (username.Length >= 3 && System.Text.RegularExpressions.Regex.IsMatch(username, @"^[a-zA-Z0-9_]+$"))
             {
                 listaDeContas.Items.Add(username);
             }
