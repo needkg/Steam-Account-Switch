@@ -25,6 +25,7 @@ namespace Steam_Account_Switch
             InitializeComponent();
         }
 
+        // Executa a função do botão Connect
         private void botaoLogar_Click(object sender, EventArgs e)
         {
             string account = listaDeContas.SelectedItem.ToString();
@@ -34,34 +35,40 @@ namespace Steam_Account_Switch
             this.Close();
         }
 
+        // Executa a função do botão fechar
         private void botaoFechar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // Executa a função do botão minimizar
         private void botaoMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
+        // Realiza funções na janela principal quando a mesma é carregada
         private void JanelaPrincipal_Load(object sender, EventArgs e)
         {
             readAccountsFile();
             listaDeContas.SelectedIndex = 0;
         }
 
+        // Executa a função do botão adicionar conta
         private void botaoAdicionarConta_Click(object sender, EventArgs e)
         {
             JanelaAdicionarConta form2 = new JanelaAdicionarConta();
             form2.ShowDialog(this);
         }
 
+        // Executa a função do botão remover conta
         private void botaoRemoverConta_Click(object sender, EventArgs e)
         {
             string accountSelected = listaDeContas.SelectedItem.ToString();
             removerConta(accountSelected);
         }
 
+        // Executa a função do botão atualizar lista
         private void botaoAtualizarLista_Click(object sender, EventArgs e)
         {
             listaDeContas.Items.Clear();
@@ -69,11 +76,13 @@ namespace Steam_Account_Switch
             listaDeContas.SelectedIndex = 0;
         }
 
+        // Executa a função do botão abrir arquivo
         private void botaoAbrirArquivo_Click(object sender, EventArgs e)
         {
             Process.Start("notepad.exe", accountsFile);
         }
 
+        // Método que remove a conta da lista
         public void removerConta(string accountSelected)
         {
             if (listaDeContas.Items.Count > 1)
@@ -89,6 +98,7 @@ namespace Steam_Account_Switch
             }
         }
 
+        // Método que atualiza o arquvio accounts.txt
         public void writeAccountsFile()
         {
             System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(accountsFile);
@@ -100,6 +110,7 @@ namespace Steam_Account_Switch
             SaveFile.Close();
         }
 
+        // Método que lê o arquivo accounts.txt
         public void readAccountsFile()
         {
             int counter = 0;
@@ -112,7 +123,8 @@ namespace Steam_Account_Switch
             readFile.Close();
         }
 
-        public void updateList()
+        // Método que adiciona uma conta na lista de conta
+        public void adicionarConta()
         {
             if (Regex.IsMatch(username, "^[a-zA-Z0-9_]*$"))
             {
@@ -127,6 +139,7 @@ namespace Steam_Account_Switch
             }
         }
 
+        // Método que modifica o registro da Steam no registro do Windows
         public void editSteamRegistry(String valor, object dado)
         {
             using (RegistryKey key = Registry.CurrentUser.CreateSubKey(chave))
@@ -137,6 +150,7 @@ namespace Steam_Account_Switch
             }
         }
 
+        // Método que reinicia o processo da Steam e Explorer.
         public void restartSteam()
         {
             foreach (Process process in Process.GetProcessesByName("steam"))
