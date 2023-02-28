@@ -232,7 +232,7 @@
             botaoAbrirArquivo.UseVisualStyleBackColor = true;
             botaoAbrirArquivo.Click += button6_Click;
             // 
-            // Form1
+            // JanelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -255,7 +255,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            Name = "Form1";
+            Name = "JanelaPrincipal";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Steam Account Switcher";

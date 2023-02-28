@@ -96,7 +96,7 @@ namespace Steam_Account_Switch
             if (Regex.IsMatch(username, "^[a-zA-Z0-9_]*$"))
             {
                 listaDeContas.Items.Add(username);
-            }            
+            }
         }
 
         public void writeAccountsFile()
