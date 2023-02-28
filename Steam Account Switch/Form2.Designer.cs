@@ -64,7 +64,7 @@ namespace Steam_Account_Switch
             botaoAdicionar.TabIndex = 18;
             botaoAdicionar.Text = "Add";
             botaoAdicionar.UseVisualStyleBackColor = true;
-            botaoAdicionar.Click += button4_Click;
+            botaoAdicionar.Click += botaoAdicionar_Click;
             // 
             // botaoCancelar
             // 
@@ -79,7 +79,7 @@ namespace Steam_Account_Switch
             botaoCancelar.TabIndex = 20;
             botaoCancelar.Text = "Cancel";
             botaoCancelar.UseVisualStyleBackColor = true;
-            botaoCancelar.Click += button2_Click_1;
+            botaoCancelar.Click += botaoFechar;
             // 
             // bordaInferior
             // 
@@ -134,7 +134,6 @@ namespace Steam_Account_Switch
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Steam Account Switcher";
-            Load += Form2_Load;
             ResumeLayout(false);
             PerformLayout();
         }

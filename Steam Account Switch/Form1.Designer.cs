@@ -63,7 +63,7 @@
             botaoLogar.Text = "Connect";
             botaoLogar.TextImageRelation = TextImageRelation.ImageBeforeText;
             botaoLogar.UseVisualStyleBackColor = true;
-            botaoLogar.Click += botao_Click;
+            botaoLogar.Click += botaoLogar_Click;
             // 
             // botaoFechar
             // 
@@ -77,7 +77,7 @@
             botaoFechar.TabIndex = 5;
             botaoFechar.Text = "X";
             botaoFechar.UseVisualStyleBackColor = true;
-            botaoFechar.Click += button2_Click;
+            botaoFechar.Click += botaoFechar_Click;
             // 
             // botaoMinimizar
             // 
@@ -91,7 +91,7 @@
             botaoMinimizar.TabIndex = 6;
             botaoMinimizar.Text = "-";
             botaoMinimizar.UseVisualStyleBackColor = true;
-            botaoMinimizar.Click += button3_Click;
+            botaoMinimizar.Click += botaoMinimizar_Click;
             // 
             // iconeSteam
             // 
@@ -111,7 +111,7 @@
             labelVersao.Name = "labelVersao";
             labelVersao.Size = new Size(72, 15);
             labelVersao.TabIndex = 12;
-            labelVersao.Text = "Version: 1.2";
+            labelVersao.Text = "Version: 1.3";
             // 
             // nomeDoPrograma
             // 
@@ -161,7 +161,7 @@
             botaoRemoverConta.TabIndex = 17;
             botaoRemoverConta.Text = "-";
             botaoRemoverConta.UseVisualStyleBackColor = true;
-            botaoRemoverConta.Click += button1_Click;
+            botaoRemoverConta.Click += botaoRemoverConta_Click;
             // 
             // botaoAdicionarConta
             // 
@@ -175,7 +175,7 @@
             botaoAdicionarConta.TabIndex = 18;
             botaoAdicionarConta.Text = "+";
             botaoAdicionarConta.UseVisualStyleBackColor = true;
-            botaoAdicionarConta.Click += button4_Click;
+            botaoAdicionarConta.Click += botaoAdicionarConta_Click;
             // 
             // bordaDireita
             // 
@@ -216,7 +216,7 @@
             botaoAtualizarLista.TabIndex = 19;
             botaoAtualizarLista.Text = "⟳";
             botaoAtualizarLista.UseVisualStyleBackColor = true;
-            botaoAtualizarLista.Click += button5_Click;
+            botaoAtualizarLista.Click += botaoAtualizarLista_Click;
             // 
             // botaoAbrirArquivo
             // 
@@ -230,7 +230,7 @@
             botaoAbrirArquivo.TabIndex = 20;
             botaoAbrirArquivo.Text = "📂";
             botaoAbrirArquivo.UseVisualStyleBackColor = true;
-            botaoAbrirArquivo.Click += button6_Click;
+            botaoAbrirArquivo.Click += botaoAbrirArquivo_Click;
             // 
             // JanelaPrincipal
             // 
@@ -259,7 +259,7 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Steam Account Switcher";
-            Load += Form1_Load;
+            Load += JanelaPrincipal_Load;
             ((System.ComponentModel.ISupportInitialize)iconeSteam).EndInit();
             bordaSuperior.ResumeLayout(false);
             bordaSuperior.PerformLayout();

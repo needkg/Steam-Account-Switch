@@ -18,17 +18,7 @@ namespace Steam_Account_Switch
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        private void botaoAdicionar_Click(object sender, EventArgs e)
         {
             JanelaPrincipal form1 = ((JanelaPrincipal)Owner);
             form1.username = caixaDeTexto.Text.ToString();
@@ -37,10 +27,11 @@ namespace Steam_Account_Switch
             this.Close();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
+        private void botaoFechar(object sender, EventArgs e)
         {
             this.Close();
 
         }
     }
+
 }

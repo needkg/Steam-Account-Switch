@@ -1,6 +1,7 @@
 using Microsoft.Win32;
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Security.Policy;
@@ -12,26 +13,128 @@ namespace Steam_Account_Switch
 {
     public partial class JanelaPrincipal : Form
     {
-        public string username;
+
+        public string username = "null";
+        static string chave = @"Software\Valve\Steam";
+        static string nomeValor1 = "AutoLoginUser";
+        static string nomeValor2 = "RememberPassword";
+        static string accountsFile = "accounts.txt";
+
         public JanelaPrincipal()
         {
             InitializeComponent();
         }
 
-        private void botao_Click(object sender, EventArgs e)
+        private void botaoLogar_Click(object sender, EventArgs e)
         {
             string account = listaDeContas.SelectedItem.ToString();
-            editRegistry(account);
+            editSteamRegistry(nomeValor1, account);
+            editSteamRegistry(nomeValor2, 1);
             restartSteam();
             this.Close();
         }
 
-        public void editRegistry(String account)
+        private void botaoFechar_Click(object sender, EventArgs e)
         {
-            RegistryKey key = Registry.CurrentUser.CreateSubKey(@"Software\Valve\Steam");
-            key.SetValue("AutoLoginUser", account);
-            key.SetValue("RememberPassword", 1);
-            key.Close();
+            this.Close();
+        }
+
+        private void botaoMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void JanelaPrincipal_Load(object sender, EventArgs e)
+        {
+            readAccountsFile();
+            listaDeContas.SelectedIndex = 0;
+        }
+
+        private void botaoAdicionarConta_Click(object sender, EventArgs e)
+        {
+            JanelaAdicionarConta form2 = new JanelaAdicionarConta();
+            form2.ShowDialog(this);
+        }
+
+        private void botaoRemoverConta_Click(object sender, EventArgs e)
+        {
+            string accountSelected = listaDeContas.SelectedItem.ToString();
+            removerConta(accountSelected);
+        }
+
+        private void botaoAtualizarLista_Click(object sender, EventArgs e)
+        {
+            listaDeContas.Items.Clear();
+            readAccountsFile();
+            listaDeContas.SelectedIndex = 0;
+        }
+
+        private void botaoAbrirArquivo_Click(object sender, EventArgs e)
+        {
+            Process.Start("notepad.exe", accountsFile);
+        }
+
+        public void removerConta(string accountSelected)
+        {
+            if (listaDeContas.Items.Count > 1)
+            {
+                listaDeContas.Items.Remove(accountSelected);
+                listaDeContas.SelectedIndex = 0;
+                writeAccountsFile();
+            }
+            else
+            {
+                MessageBox.Show("You need to have at least 1 account on the list", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public void writeAccountsFile()
+        {
+            System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(accountsFile);
+            foreach (var item in listaDeContas.Items)
+            {
+                SaveFile.WriteLine(item);
+            }
+
+            SaveFile.Close();
+        }
+
+        public void readAccountsFile()
+        {
+            int counter = 0;
+            string line;
+            System.IO.StreamReader readFile = new System.IO.StreamReader(accountsFile);
+            while ((line = readFile.ReadLine()) != null)
+            {
+                listaDeContas.Items.Add(line); counter++;
+            }
+            readFile.Close();
+        }
+
+        public void updateList()
+        {
+            if (Regex.IsMatch(username, "^[a-zA-Z0-9_]*$"))
+            {
+                listaDeContas.Items.Add(username);
+            }
+            else
+            {
+                MessageBox.Show("Please enter an account name that is at least 3 characters long and uses only a-z, A-Z, 0-9 or _ characters.", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                JanelaAdicionarConta form2 = new JanelaAdicionarConta();
+                form2.ShowDialog(this);
+            }
+        }
+
+        public void editSteamRegistry(String valor, object dado)
+        {
+            using (RegistryKey key = Registry.CurrentUser.CreateSubKey(chave))
+            {
+                key.SetValue(valor, dado);
+
+                key.Close();
+            }
         }
 
         public void restartSteam()
@@ -52,90 +155,6 @@ namespace Steam_Account_Switch
             Process cmdProcess = new Process();
             cmdProcess.StartInfo = cmdStartInfo;
             cmdProcess.Start();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            readAccountsFile();
-            listaDeContas.SelectedIndex = 0;
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            JanelaAdicionarConta form2 = new JanelaAdicionarConta();
-            form2.ShowDialog(this);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string accountSelected = listaDeContas.SelectedItem.ToString();
-                listaDeContas.Items.Remove(accountSelected);
-                listaDeContas.SelectedIndex = 0;
-            }
-            catch
-            {
-
-            }
-            writeAccountsFile();
-        }
-
-        public void updateList()
-        {
-            if (Regex.IsMatch(username, "^[a-zA-Z0-9_]*$"))
-            {
-                listaDeContas.Items.Add(username);
-            }
-        }
-
-        public void writeAccountsFile()
-        {
-            const string sPath = "accounts.txt";
-
-            System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(sPath);
-            foreach (var item in listaDeContas.Items)
-            {
-                SaveFile.WriteLine(item);
-            }
-
-            SaveFile.Close();
-        }
-
-        public void readAccountsFile()
-        {
-            int counter = 0;
-            string line;
-            const string sPath = "accounts.txt";
-            System.IO.StreamReader readFile = new System.IO.StreamReader(sPath);
-            while ((line = readFile.ReadLine()) != null)
-            {
-                listaDeContas.Items.Add(line); counter++;
-            }
-            readFile.Close();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            listaDeContas.Items.Clear();
-            readAccountsFile();
-            listaDeContas.SelectedIndex = 0;
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            string path = "accounts.txt";
-            Process.Start("notepad.exe", path);
         }
     }
 
