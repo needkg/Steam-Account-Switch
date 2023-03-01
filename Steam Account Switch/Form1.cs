@@ -155,6 +155,7 @@ namespace Steam_Account_Switch
             if (username.Length >= 3 && System.Text.RegularExpressions.Regex.IsMatch(username, @"^[a-zA-Z0-9_]+$"))
             {
                 listaDeContas.Items.Add(username);
+                listaDeContas.SelectedItem = username;
             }
             else
             {
