@@ -253,7 +253,7 @@
             botaoVersao.Size = new Size(71, 15);
             botaoVersao.TabIndex = 22;
             botaoVersao.TabStop = true;
-            botaoVersao.Text = "Version: 1.4";
+            botaoVersao.Text = "Version: 1.5";
             botaoVersao.LinkClicked += botaoVersao_LinkClicked;
             // 
             // JanelaPrincipal
