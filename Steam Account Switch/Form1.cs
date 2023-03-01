@@ -4,10 +4,12 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Net;
 using System.Runtime.InteropServices;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Policy;
 using System.Security.Principal;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using static System.Windows.Forms.LinkLabel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
@@ -127,35 +129,62 @@ namespace Steam_Account_Switch
         // Método que atualiza o arquvio accounts.txt
         public void writeAccountsFile()
         {
-            System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(accountsFile);
-            foreach (var item in listaDeContas.Items)
+            using (StreamWriter arquivo = new StreamWriter(accountsFile, false))
             {
-                SaveFile.WriteLine(item);
-            }
+                foreach (var linha in listaDeContas.Items)
+                {
+                    arquivo.WriteLine(linha);
+                }
 
-            SaveFile.Close();
+                arquivo.Close();
+            }
         }
 
         // Método que lê o arquivo accounts.txt
         public void readAccountsFile()
         {
-            int counter = 0;
-            string line;
-            System.IO.StreamReader readFile = new System.IO.StreamReader(accountsFile);
-            while ((line = readFile.ReadLine()) != null)
+            string caminhoArquivo = accountsFile;
+            var linhas = new List<string>();
+            using (var arquivo = new StreamReader(caminhoArquivo))
             {
-                listaDeContas.Items.Add(line); counter++;
+                while (!arquivo.EndOfStream)
+                {
+                    var linha = arquivo.ReadLine();
+
+                    if (linha.Length >= 3 && Regex.IsMatch(linha, "^[a-zA-Z0-9_]+$"))
+                    {
+                        if (!linhas.Contains(linha))
+                        {
+                            linhas.Add(linha);
+                        }
+                    }
+                }
+                arquivo.Close();
             }
-            readFile.Close();
+
+            File.WriteAllLines(caminhoArquivo, linhas);
+
+            listaDeContas.Items.AddRange(linhas.ToArray());
         }
 
         // Método que adiciona uma conta na lista de conta
         public void adicionarConta()
         {
-            if (username.Length >= 3 && System.Text.RegularExpressions.Regex.IsMatch(username, @"^[a-zA-Z0-9_]+$"))
+            if (username.Length >= 3 && Regex.IsMatch(username, "^[a-zA-Z0-9_]+$"))
             {
-                listaDeContas.Items.Add(username);
-                listaDeContas.SelectedItem = username;
+                // Verifica se a linha já foi adicionada anteriormente
+                if (!listaDeContas.Items.Contains(username))
+                {
+                    listaDeContas.Items.Add(username);
+                    listaDeContas.SelectedItem = username;
+                }
+                else
+                {
+                    MessageBox.Show("The account has already been added.", "Warning",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    JanelaAdicionarConta form2 = new JanelaAdicionarConta();
+                    form2.ShowDialog(this);
+                }
             }
             else
             {
