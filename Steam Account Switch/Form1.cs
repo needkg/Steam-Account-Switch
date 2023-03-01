@@ -106,7 +106,7 @@ namespace Steam_Account_Switch
         {
             Process myProcess = new Process();
             myProcess.StartInfo.UseShellExecute = true;
-            myProcess.StartInfo.FileName = "https://github.com/nk260203/Steam-Account-Switch";
+            myProcess.StartInfo.FileName = "https://github.com/needkg/Steam-Account-Switch";
             myProcess.Start();
         }
 
