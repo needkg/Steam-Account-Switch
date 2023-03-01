@@ -50,6 +50,7 @@ namespace Steam_Account_Switch
             caixaDeTexto.Size = new Size(104, 23);
             caixaDeTexto.TabIndex = 7;
             caixaDeTexto.TextAlign = HorizontalAlignment.Center;
+            caixaDeTexto.KeyDown += new KeyEventHandler(caixaDeTexto_KeyDown);
             // 
             // botaoAdicionar
             // 
