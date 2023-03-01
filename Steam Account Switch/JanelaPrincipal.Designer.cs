@@ -31,11 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JanelaPrincipal));
             botaoLogar = new Button();
-            botaoFechar = new Button();
-            botaoMinimizar = new Button();
             iconeSteam = new PictureBox();
-            textoNomeDoPrograma = new Label();
-            bordaSuperior = new Panel();
             listaDeContas = new ListBox();
             botaoRemoverConta = new Button();
             botaoAdicionarConta = new Button();
@@ -47,6 +43,10 @@
             botaoComoUsar = new LinkLabel();
             botaoVersao = new LinkLabel();
             toolTip1 = new ToolTip(components);
+            botaoFechar = new Button();
+            botaoMinimizar = new Button();
+            textoNomeDoPrograma = new Label();
+            bordaSuperior = new Panel();
             ((System.ComponentModel.ISupportInitialize)iconeSteam).BeginInit();
             bordaSuperior.SuspendLayout();
             SuspendLayout();
@@ -69,34 +69,6 @@
             botaoLogar.UseVisualStyleBackColor = true;
             botaoLogar.Click += BotaoLogar_Click;
             // 
-            // botaoFechar
-            // 
-            botaoFechar.FlatAppearance.BorderSize = 0;
-            botaoFechar.FlatStyle = FlatStyle.Flat;
-            botaoFechar.ForeColor = Color.White;
-            botaoFechar.Location = new Point(252, 11);
-            botaoFechar.Margin = new Padding(1);
-            botaoFechar.Name = "botaoFechar";
-            botaoFechar.Size = new Size(25, 25);
-            botaoFechar.TabIndex = 5;
-            botaoFechar.Text = "X";
-            botaoFechar.UseVisualStyleBackColor = true;
-            botaoFechar.Click += BotaoFechar_Click;
-            // 
-            // botaoMinimizar
-            // 
-            botaoMinimizar.FlatAppearance.BorderSize = 0;
-            botaoMinimizar.FlatStyle = FlatStyle.Flat;
-            botaoMinimizar.ForeColor = Color.White;
-            botaoMinimizar.Location = new Point(227, 11);
-            botaoMinimizar.Margin = new Padding(1);
-            botaoMinimizar.Name = "botaoMinimizar";
-            botaoMinimizar.Size = new Size(25, 25);
-            botaoMinimizar.TabIndex = 6;
-            botaoMinimizar.Text = "-";
-            botaoMinimizar.UseVisualStyleBackColor = true;
-            botaoMinimizar.Click += BotaoMinimizar_Click;
-            // 
             // iconeSteam
             // 
             iconeSteam.Image = Properties.Resources.Steam_Switch_Account_Icon;
@@ -106,33 +78,6 @@
             iconeSteam.Size = new Size(67, 65);
             iconeSteam.TabIndex = 7;
             iconeSteam.TabStop = false;
-            // 
-            // textoNomeDoPrograma
-            // 
-            textoNomeDoPrograma.AutoSize = true;
-            textoNomeDoPrograma.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textoNomeDoPrograma.ForeColor = Color.FromArgb(158, 161, 178);
-            textoNomeDoPrograma.Location = new Point(13, 16);
-            textoNomeDoPrograma.Name = "textoNomeDoPrograma";
-            textoNomeDoPrograma.Size = new Size(145, 15);
-            textoNomeDoPrograma.TabIndex = 13;
-            textoNomeDoPrograma.Text = "Steam Account Switcher";
-            textoNomeDoPrograma.MouseDown += ArrastarJanela_MouseDown;
-            textoNomeDoPrograma.MouseMove += ArrastarJanela_MouseMove;
-            // 
-            // bordaSuperior
-            // 
-            bordaSuperior.BackColor = Color.FromArgb(24, 30, 54);
-            bordaSuperior.BackgroundImageLayout = ImageLayout.None;
-            bordaSuperior.Controls.Add(textoNomeDoPrograma);
-            bordaSuperior.Controls.Add(botaoMinimizar);
-            bordaSuperior.Controls.Add(botaoFechar);
-            bordaSuperior.Location = new Point(-6, -9);
-            bordaSuperior.Name = "bordaSuperior";
-            bordaSuperior.Size = new Size(292, 38);
-            bordaSuperior.TabIndex = 14;
-            bordaSuperior.MouseDown += ArrastarJanela_MouseDown;
-            bordaSuperior.MouseMove += ArrastarJanela_MouseMove;
             // 
             // listaDeContas
             // 
@@ -183,25 +128,25 @@
             bordaDireita.BackgroundImageLayout = ImageLayout.None;
             bordaDireita.Location = new Point(269, 29);
             bordaDireita.Name = "bordaDireita";
-            bordaDireita.Size = new Size(17, 182);
+            bordaDireita.Size = new Size(10, 174);
             bordaDireita.TabIndex = 15;
             // 
             // bordaInferior
             // 
             bordaInferior.BackColor = Color.FromArgb(24, 30, 54);
             bordaInferior.BackgroundImageLayout = ImageLayout.None;
-            bordaInferior.Location = new Point(-7, 196);
+            bordaInferior.Location = new Point(1, 196);
             bordaInferior.Name = "bordaInferior";
-            bordaInferior.Size = new Size(290, 15);
+            bordaInferior.Size = new Size(270, 10);
             bordaInferior.TabIndex = 16;
             // 
             // bordaEsquerda
             // 
             bordaEsquerda.BackColor = Color.FromArgb(24, 30, 54);
             bordaEsquerda.BackgroundImageLayout = ImageLayout.None;
-            bordaEsquerda.Location = new Point(-7, 23);
+            bordaEsquerda.Location = new Point(-7, 28);
             bordaEsquerda.Name = "bordaEsquerda";
-            bordaEsquerda.Size = new Size(10, 188);
+            bordaEsquerda.Size = new Size(10, 175);
             bordaEsquerda.TabIndex = 17;
             // 
             // botaoAtualizarLista
@@ -261,6 +206,61 @@
             botaoVersao.Text = "Version: 1.6";
             botaoVersao.LinkClicked += BotaoVersao_LinkClicked;
             // 
+            // botaoFechar
+            // 
+            botaoFechar.FlatAppearance.BorderSize = 0;
+            botaoFechar.FlatStyle = FlatStyle.Flat;
+            botaoFechar.ForeColor = Color.White;
+            botaoFechar.Location = new Point(252, 11);
+            botaoFechar.Margin = new Padding(1);
+            botaoFechar.Name = "botaoFechar";
+            botaoFechar.Size = new Size(25, 25);
+            botaoFechar.TabIndex = 5;
+            botaoFechar.Text = "X";
+            botaoFechar.UseVisualStyleBackColor = true;
+            botaoFechar.Click += BotaoFechar_Click;
+            // 
+            // botaoMinimizar
+            // 
+            botaoMinimizar.FlatAppearance.BorderSize = 0;
+            botaoMinimizar.FlatStyle = FlatStyle.Flat;
+            botaoMinimizar.ForeColor = Color.White;
+            botaoMinimizar.Location = new Point(227, 11);
+            botaoMinimizar.Margin = new Padding(1);
+            botaoMinimizar.Name = "botaoMinimizar";
+            botaoMinimizar.Size = new Size(25, 25);
+            botaoMinimizar.TabIndex = 6;
+            botaoMinimizar.Text = "-";
+            botaoMinimizar.UseVisualStyleBackColor = true;
+            botaoMinimizar.Click += BotaoMinimizar_Click;
+            // 
+            // textoNomeDoPrograma
+            // 
+            textoNomeDoPrograma.AutoSize = true;
+            textoNomeDoPrograma.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textoNomeDoPrograma.ForeColor = Color.FromArgb(158, 161, 178);
+            textoNomeDoPrograma.Location = new Point(13, 16);
+            textoNomeDoPrograma.Name = "textoNomeDoPrograma";
+            textoNomeDoPrograma.Size = new Size(145, 15);
+            textoNomeDoPrograma.TabIndex = 13;
+            textoNomeDoPrograma.Text = "Steam Account Switcher";
+            textoNomeDoPrograma.MouseDown += ArrastarJanela_MouseDown;
+            textoNomeDoPrograma.MouseMove += ArrastarJanela_MouseMove;
+            // 
+            // bordaSuperior
+            // 
+            bordaSuperior.BackColor = Color.FromArgb(24, 30, 54);
+            bordaSuperior.BackgroundImageLayout = ImageLayout.None;
+            bordaSuperior.Controls.Add(textoNomeDoPrograma);
+            bordaSuperior.Controls.Add(botaoMinimizar);
+            bordaSuperior.Controls.Add(botaoFechar);
+            bordaSuperior.Location = new Point(-6, -9);
+            bordaSuperior.Name = "bordaSuperior";
+            bordaSuperior.Size = new Size(292, 38);
+            bordaSuperior.TabIndex = 14;
+            bordaSuperior.MouseDown += ArrastarJanela_MouseDown;
+            bordaSuperior.MouseMove += ArrastarJanela_MouseMove;
+            // 
             // JanelaPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -304,11 +304,7 @@
 
         #endregion
         private Button botaoLogar;
-        private Button botaoFechar;
-        private Button botaoMinimizar;
         private PictureBox iconeSteam;
-        private Label textoNomeDoPrograma;
-        private Panel bordaSuperior;
         private ListBox listaDeContas;
         private Button botaoRemoverConta;
         private Button botaoAdicionarConta;
@@ -320,5 +316,9 @@
         private LinkLabel botaoComoUsar;
         private LinkLabel botaoVersao;
         private ToolTip toolTip1;
+        private Button botaoFechar;
+        private Button botaoMinimizar;
+        private Label textoNomeDoPrograma;
+        private Panel bordaSuperior;
     }
 }
