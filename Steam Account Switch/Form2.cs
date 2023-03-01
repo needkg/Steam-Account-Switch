@@ -18,6 +18,15 @@ namespace Steam_Account_Switch
             InitializeComponent();
         }
 
+        // Executa a função do botão adicionar quando o usuário pressionar ENTER dentro da caixaDeTexto
+        private void caixaDeTexto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                botaoAdicionar.PerformClick();
+            }
+        }
+
         // Executa a função do botão adicionar
         private void botaoAdicionar_Click(object sender, EventArgs e)
         {
