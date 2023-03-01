@@ -100,13 +100,14 @@
             // iconeSteam
             // 
             iconeSteam.Image = Properties.Resources.Steam_Switch_Account_Icon;
-            iconeSteam.Location = new Point(190, 70);
+            iconeSteam.Location = new Point(187, 76);
+            iconeSteam.Margin = new Padding(3, 44, 3, 62);
             iconeSteam.Name = "iconeSteam";
             iconeSteam.Size = new Size(67, 65);
             iconeSteam.TabIndex = 7;
             iconeSteam.TabStop = false;
             // 
-            // nomeDoPrograma
+            // textoNomeDoPrograma
             // 
             textoNomeDoPrograma.AutoSize = true;
             textoNomeDoPrograma.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -257,7 +258,7 @@
             botaoVersao.Size = new Size(71, 15);
             botaoVersao.TabIndex = 22;
             botaoVersao.TabStop = true;
-            botaoVersao.Text = "Version: 1.5";
+            botaoVersao.Text = "Version: 1.6";
             botaoVersao.LinkClicked += BotaoVersao_LinkClicked;
             // 
             // JanelaPrincipal
