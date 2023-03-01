@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JanelaPrincipal));
             botaoLogar = new Button();
             botaoFechar = new Button();
@@ -45,6 +46,7 @@
             botaoAbrirArquivo = new Button();
             botaoComoUsar = new LinkLabel();
             botaoVersao = new LinkLabel();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)iconeSteam).BeginInit();
             bordaSuperior.SuspendLayout();
             SuspendLayout();
@@ -63,6 +65,7 @@
             botaoLogar.TabIndex = 3;
             botaoLogar.Text = "Connect";
             botaoLogar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            toolTip1.SetToolTip(botaoLogar, "Connect selected account");
             botaoLogar.UseVisualStyleBackColor = true;
             botaoLogar.Click += botaoLogar_Click;
             // 
@@ -150,6 +153,7 @@
             botaoRemoverConta.Size = new Size(25, 25);
             botaoRemoverConta.TabIndex = 17;
             botaoRemoverConta.Text = "-";
+            toolTip1.SetToolTip(botaoRemoverConta, "Remove account");
             botaoRemoverConta.UseVisualStyleBackColor = true;
             botaoRemoverConta.Click += botaoRemoverConta_Click;
             // 
@@ -164,6 +168,7 @@
             botaoAdicionarConta.Size = new Size(25, 25);
             botaoAdicionarConta.TabIndex = 18;
             botaoAdicionarConta.Text = "+";
+            toolTip1.SetToolTip(botaoAdicionarConta, "Add account");
             botaoAdicionarConta.UseVisualStyleBackColor = true;
             botaoAdicionarConta.Click += botaoAdicionarConta_Click;
             // 
@@ -205,6 +210,7 @@
             botaoAtualizarLista.Size = new Size(25, 25);
             botaoAtualizarLista.TabIndex = 19;
             botaoAtualizarLista.Text = "⟳";
+            toolTip1.SetToolTip(botaoAtualizarLista, "Refresh account list");
             botaoAtualizarLista.UseVisualStyleBackColor = true;
             botaoAtualizarLista.Click += botaoAtualizarLista_Click;
             // 
@@ -219,6 +225,7 @@
             botaoAbrirArquivo.Size = new Size(25, 25);
             botaoAbrirArquivo.TabIndex = 20;
             botaoAbrirArquivo.Text = "📂";
+            toolTip1.SetToolTip(botaoAbrirArquivo, "Open accounts.txt");
             botaoAbrirArquivo.UseVisualStyleBackColor = true;
             botaoAbrirArquivo.Click += botaoAbrirArquivo_Click;
             // 
@@ -233,6 +240,7 @@
             botaoComoUsar.TabIndex = 21;
             botaoComoUsar.TabStop = true;
             botaoComoUsar.Text = "How to use";
+            toolTip1.SetToolTip(botaoComoUsar, "How to use guide");
             botaoComoUsar.LinkClicked += botaoComoUsar_LinkClicked;
             // 
             // botaoVersao
@@ -301,5 +309,6 @@
         private Button botaoAbrirArquivo;
         private LinkLabel botaoComoUsar;
         private LinkLabel botaoVersao;
+        private ToolTip toolTip1;
     }
 }
