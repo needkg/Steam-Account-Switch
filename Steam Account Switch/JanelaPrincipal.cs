@@ -153,7 +153,6 @@ namespace Steam_Account_Switch
         // Lê o arquivo de texto contendo nomes de usuários e adiciona esses nomes a uma lista na interface do programa.
         public void LerArquivoDeContas()
         {
-            Boolean found = false;
             string caminhoArquivo = caminhoArquivoContas;
             var linhas = new List<string>();
             using (var arquivo = new StreamReader(caminhoArquivo))
@@ -166,7 +165,6 @@ namespace Steam_Account_Switch
                     {
                         if (!linhas.Contains(linha))
                         {   
-                            found = true;
                             linhas.Add(linha);
                         }
                     }
